@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class PersonUser {
 	
@@ -17,8 +18,15 @@ public class PersonUser {
 	private String email;
 	private String login;
 	private String password;
+	private int age;
 
 	
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -54,6 +62,11 @@ public class PersonUser {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "PersonUser [id=" + id + ", name=" + name + ", lastName=" + lastName + ", email=" + email + ", login="
+				+ login + ", password=" + password + ", age=" + age + "]";
 	}
 	
 	
