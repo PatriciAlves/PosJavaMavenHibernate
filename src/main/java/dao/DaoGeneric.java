@@ -63,10 +63,15 @@ public class DaoGeneric <E>{
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		
-		List<E> list = entityManager.createQuery("from  " + entidade.getName()).getResultList();
+		List<E> lista = entityManager.createQuery("from " + entidade.getName()).getResultList();
 		
 		transaction.commit();
-		return list;
+		return lista;
+	}
+
+	public EntityManager getEntityManager() {
+		// TODO Auto-generated method stub
+		return entityManager;
 	}
 	
 }

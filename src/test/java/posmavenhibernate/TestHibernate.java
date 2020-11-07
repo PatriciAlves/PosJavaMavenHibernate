@@ -74,8 +74,22 @@ public class TestHibernate {
 		for (PersonUser personUser : list) {
 			System.out.println(personUser);
 			System.out.println("---------------------------------------------------");
-
 		}
 
-	}
+		}
+		@Test
+		public void testQueryList() {
+			DaoGeneric<PersonUser> daoGeneric = new DaoGeneric<PersonUser>();
+
+			List<PersonUser> list = daoGeneric.getEntityManager()
+					.createQuery("from PersonUser")
+					.getResultList();
+			
+			for (PersonUser personUser : list) {
+				System.out.println(personUser);
+				
+
+			}
+		}
+
 }
