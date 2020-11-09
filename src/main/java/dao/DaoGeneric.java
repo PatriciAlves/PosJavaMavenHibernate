@@ -7,6 +7,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+import model.PersonUser;
+
 public class DaoGeneric <E>{
 	
 	private EntityManager entityManager= HibernateUtil.geEntityManager();
@@ -70,8 +72,10 @@ public class DaoGeneric <E>{
 	}
 
 	public EntityManager getEntityManager() {
-		// TODO Auto-generated method stub
+	
 		return entityManager;
 	}
+
+
 	
 }

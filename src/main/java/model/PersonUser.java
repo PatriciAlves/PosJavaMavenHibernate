@@ -1,11 +1,15 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -25,7 +29,15 @@ public class PersonUser {
 	private String password;
 	private int age;
 
+	@OneToMany(mappedBy = "personUser", fetch = FetchType.EAGER)
+	private List<PhoneUser>phoneUser;
 	
+	public List<PhoneUser> getPhoneUser() {
+		return phoneUser;
+	}
+	public void setPhoneUser(List<PhoneUser> phoneUser) {
+		this.phoneUser = phoneUser;
+	}
 	public int getAge() {
 		return age;
 	}

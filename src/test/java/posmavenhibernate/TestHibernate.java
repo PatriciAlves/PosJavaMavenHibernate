@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import dao.DaoGeneric;
 import model.PersonUser;
+import model.PhoneUser;
 
 public class TestHibernate {
 
@@ -116,5 +117,16 @@ public class TestHibernate {
 			}
 		
 		}
-		
+		@Test
+		public void  testSavePhone() {
+			DaoGeneric daoGeneric = new DaoGeneric();
+			PersonUser person = (PersonUser) daoGeneric.consult(11L, PersonUser.class);
+			PhoneUser phoneuser = new PhoneUser();
+			
+			phoneuser.setType("Phone");
+			phoneuser.setNumber("11948216150");
+			phoneuser.setPersonUser(person);
+			daoGeneric.salvar(phoneuser);
+			
+		}
 }

@@ -7,6 +7,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org
 	<persistence-unit name="pos-maven-hibernate">
 	
 	<class>model.PersonUser</class>
+	<class>model.PhoneUser</class>
 	
 	<properties>
 	<!--Dados de conexão com o banco-->
